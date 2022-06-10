@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/store'
+import {Provider} from 'react-redux'
+import Map from './google_map/Map'
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <Provider store={store}>
+   
+    <BrowserRouter>
+   
+   <Routes>
+     <Route path='/' exact element={<App/>} />
+     <Route path='/map' element={<Map/>} />
+    
+   </Routes>
+ </BrowserRouter> 
+  </Provider>
   </React.StrictMode>
 );
 
