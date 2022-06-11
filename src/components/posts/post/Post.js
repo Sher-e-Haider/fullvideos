@@ -2,11 +2,7 @@ import React from 'react'
 import useStyles from './style'
 import ReactAudioPlayer from 'react-audio-player';
 import {Card , CardActions, CardContent, CardMedia, Button ,Typography} from '@material-ui/core'
-//import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
 
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
-// import moment from 'moment'
 import {useDispatch} from 'react-redux'
 import ReactPlayer from 'react-player';
 import { Player } from 'video-react';
@@ -15,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Post=({post,url,formData,info})=> {
     const classes = useStyles();
-    const dispatch = useDispatch()
+   
     //console.log(post,'tdtdtdtdt');
     return (
         <Card className={classes.card}>      
