@@ -20,7 +20,7 @@
       flex-direction: column-reverse;
       width:420px;
       margin: 0 auto;
-      border: 1px solid red;
+     
       margin: 10px;
     }
 }
@@ -35,16 +35,14 @@
 
 @media screen and (max-width:375px){
     .inputs{
-  width: 300px;
-}
-.main{
-     
-    
-     width:330px;
-     margin: 0 auto;
-     border: 1px solid red;
-     margin: 10px;
+         width: 300px;
    }
+}
+
+@media screen and (max-width:450px){
+    .inputs{
+  width: 350px;
+}
 }
 
 
