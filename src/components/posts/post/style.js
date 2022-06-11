@@ -19,15 +19,20 @@ export default makeStyles({
     justifyContent: 'space-between',
     borderRadius: '5px',
     height: '100%',
-    width:'450px',
+    width:'320px',
     margin:'10px',
     padding: '7px',
     position: 'relative',
+    objectFit:'contain'
   },
   post:{
    
    justifyContent: 'space-between'
   },
+  type:{
+     textAlign:'center'
+  },
+  
   overlay: {
     position: 'absolute',
     top: '20px',

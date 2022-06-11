@@ -38,7 +38,7 @@ const Home = () => {
      
     <Container>
     <Appbar/>
-      <div container className= 'main'  alignItems="stretch" spacing={2}>
+      <div container className='main'  alignItems="stretch" spacing={2}>
         <Grid item xs={12} sm={7}>
           <Posts url={url} formData={formData} info={info} />
         </Grid> 

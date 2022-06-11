@@ -66,7 +66,7 @@ function Form({url,setUrl,formData,setFormData,info,setInfo}){
     
     return (
     
-<form onSubmit={handleSubmit} className='mx-3' >
+<form onSubmit={handleSubmit} className='mx-1 inputs' >
   <div class="mb-3">
     <label for="location" className="form-label">Location</label>
     <input type="text" placeholder='enter your location' className="form-control" value={postData.location} onChange={(e)=> setPostData({...postData,location:e.target.value})}  />

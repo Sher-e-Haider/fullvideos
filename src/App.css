@@ -11,14 +11,17 @@
 #root{
   background-color: rgb(240, 242, 244);
   width:100%;
+  overflow: hidden;
 }
 
 @media screen and (max-width:930px){
     .main{
      
       flex-direction: column-reverse;
-      width:430px;
+      width:420px;
       margin: 0 auto;
+      border: 1px solid red;
+      margin: 10px;
     }
 }
 /* @media screen and (max-width:500px){
@@ -29,3 +32,23 @@
   }
   
 } */
+
+@media screen and (max-width:375px){
+    .inputs{
+  width: 300px;
+}
+.main{
+     
+    
+     width:330px;
+     margin: 0 auto;
+     border: 1px solid red;
+     margin: 10px;
+   }
+}
+
+
+.cards{
+  width: 430px;
+  
+}

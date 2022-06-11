@@ -14,7 +14,10 @@ const Post=({post,url,formData,info})=> {
    
     //console.log(post,'tdtdtdtdt');
     return (
-        <Card className={classes.card}>      
+         <div className="cards">
+
+       
+        <Card className={classes.card} xs={12} sm={6}>      
         {
             formData?.type==='image'?(<CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
           ):formData?.type==='audio'?( <div>
@@ -30,7 +33,7 @@ const Post=({post,url,formData,info})=> {
       poster="images/iron1.webp"
       src={`videos/${post.video}.mp4`}
       //https://media.w3.org/2010/05/sintel/trailer_hd.mp4
-    />):url.btn==='url'?(<ReactPlayer control url = {post.video}/> ):null
+    />):url.btn==='url'?(<ReactPlayer control width='300px' height='220px' url = {post.video}/> ):null
              }
         </div>):888888
         }           
@@ -48,12 +51,12 @@ const Post=({post,url,formData,info})=> {
              }
              
             <div className="add p-3 m-3 border-bottom">
-            <Typography variant="h5">{post.mail}</Typography>
+            <Typography variant="div"  >{post.mail}</Typography>
             </div>
            
            {
                 post?.dates &&<div className="mail">
-                 <Typography variant="h5">{post.dates}</Typography>
+                 <Typography variant="h6" className={classes.type}>{post.dates}</Typography>
             </div>
     
            }
@@ -64,6 +67,7 @@ const Post=({post,url,formData,info})=> {
             
             
        </Card>
+       </div>
     )
 }
 
