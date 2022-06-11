@@ -54,9 +54,7 @@ const Post=({post,url,formData,info})=> {
             <div className="add p-3 m-3 border-bottom">
             <Typography variant="h5">{post.mail}</Typography>
             </div>
-            <div className="mail">
-                 <Typography variant="h5">{post.address}</Typography>
-            </div>
+           
            {
                 post?.dates &&<div className="mail">
                  <Typography variant="h5">{post.dates}</Typography>

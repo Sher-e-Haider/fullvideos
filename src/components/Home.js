@@ -32,7 +32,7 @@ const Home = () => {
     
   
   dispatch(getPosts())
-  }, [posts,dispatch,info])
+  }, [posts,dispatch])
   return (
     <Grow in>
      

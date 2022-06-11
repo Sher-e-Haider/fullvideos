@@ -96,30 +96,30 @@
 // // or for Moment.js
 // import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { useEffect } from 'react';
+// import * as React from 'react';
+// import TextField from '@mui/material/TextField';
+// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+// import { useEffect } from 'react';
 
-export default function BasicDateTimePicker({postData,setPostData}) {
-  const [value, setValue] = React.useState(new Date());
-  //console.log(value,'baaaa');
-  useEffect(() => {
-    setPostData({...postData,dates:value})
-    console.log('datesssss');
-  },[postData,value,setPostData])
-  return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DateTimePicker
-        renderInput={(props) => <TextField {...props} />}
-        label="DateTimePicker"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-      />
-    </LocalizationProvider>
-  );
-}
+// export default function BasicDateTimePicker({postData,setPostData}) {
+//   const [value, setValue] = React.useState(new Date());
+//   //console.log(value,'baaaa');
+//   useEffect(() => {
+//     setPostData({...postData,dates:value})
+//     console.log('datesssss');
+//   },[postData,value,setPostData])
+//   return (
+//     <LocalizationProvider dateAdapter={AdapterDateFns}>
+//       <DateTimePicker
+//         renderInput={(props) => <TextField {...props} />}
+//         label="DateTimePicker"
+//         value={value}
+//         onChange={(newValue) => {
+//           setValue(newValue);
+//         }}
+//       />
+//     </LocalizationProvider>
+//   );
+// }

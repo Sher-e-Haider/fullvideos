@@ -1,6 +1,6 @@
 import Axios from "axios"
 
-const url = 'http://localhost:5000/api'
+const url = 'https://gaan-sahil.herokuapp.com/api'
 export const getPosts=()=>async(dispatch)=>{
    
     try {

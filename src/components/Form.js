@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Dates from './Dates'
 import FileBase from 'react-file-base64'
 import {useDispatch} from 'react-redux'
 import {createPost} from '../redux/action/action'
 import {TextField} from '@material-ui/core'
-import { Player } from 'video-react';
-import ReactPlayer from 'react-player/lazy'
 import "video-react/dist/video-react.css"
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -30,7 +27,7 @@ function Form({url,setUrl,formData,setFormData,info,setInfo}){
     useEffect(() => {
       setPostData({...postData,dates:value})
       
-    },[postData,value,setPostData])
+    },[value,setPostData])
     
     
     
@@ -47,7 +44,7 @@ function Form({url,setUrl,formData,setFormData,info,setInfo}){
                audio.push(postData.audio)
            
        console.log(postData.dates,'audio');
-      setPostData({location:'',address:'',description:'',dates:'',mail:'',audio:'',video:'',selectedFile:''})
+      // setPostData({location:'',address:'',description:'',dates:'',mail:'',audio:'',video:'',selectedFile:''})
        
     }
 
