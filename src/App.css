@@ -14,15 +14,15 @@
   overflow: hidden;
 }
 
-@media screen and (max-width:930px){
+@media screen and (max-width:810px){
     .main{
-     
       flex-direction: column-reverse;
       width:420px;
-      margin: 0 auto;
+     
      
       margin: 10px;
     }
+    
 }
 /* @media screen and (max-width:500px){
   #root{
@@ -32,18 +32,28 @@
   }
   
 } */
-
-@media screen and (max-width:375px){
-    .inputs{
-         width: 300px;
-   }
+.radio{
+  display: flex;
 }
+
+
+
 
 @media screen and (max-width:450px){
     .inputs{
   width: 350px;
 }
 }
+@media screen and (max-width:375px){
+  .inputs{
+       width: 300px;
+ }
+ .radio{
+   display:block;
+ }
+}
+
+
 
 
 .cards{

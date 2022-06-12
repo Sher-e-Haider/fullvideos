@@ -13,7 +13,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 
  
-function Form({url,setUrl,formData,setFormData,info,setInfo}){
+function Form({url,setUrl,formData,setFormData,setInfo}){
     
     const [postData,setPostData] = useState({
         location:'',address:'',description:'',dates:'',mail:'',audio:'',video:'',selectedFile:''
@@ -44,7 +44,7 @@ function Form({url,setUrl,formData,setFormData,info,setInfo}){
                audio.push(postData.audio)
            
        console.log(postData.dates,'audio');
-      // setPostData({location:'',address:'',description:'',dates:'',mail:'',audio:'',video:'',selectedFile:''})
+      setPostData({location:'',address:'',description:'',dates:'',mail:'',audio:'',video:'',selectedFile:''})
        
     }
 
@@ -97,11 +97,11 @@ function Form({url,setUrl,formData,setFormData,info,setInfo}){
   <div class="mb-3">
     <label for="des" className="form-label">description</label>
     <textarea type="text" className="form-control" rows={4} placeholder='write some description about your styles' value={postData.description} id="exampleInputEmail1" onChange={(e)=> setPostData({...postData, description:e.target.value})}/>
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+    
   </div>
   {/* radio */}
   <strong>Choose your file media type</strong>
-  <div className="fileMedia d-flex justify-content-between">
+  <div className="fileMedia justify-content-between radio ">
      
       <div className=' d-flex align-items-center'>
           <label htmlFor="audio">audio:</label>
