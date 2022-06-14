@@ -5,7 +5,8 @@ export const fetchData= (posts = [],action)=>{
 
         
       
-             
+        case "DELETE":
+                return posts.filter((post) => post._id !== action.payload)
        
         case "CREATE":
             return [...posts,action.payload]

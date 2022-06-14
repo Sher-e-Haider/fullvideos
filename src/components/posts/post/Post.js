@@ -2,16 +2,17 @@ import React from 'react'
 import useStyles from './style'
 import ReactAudioPlayer from 'react-audio-player';
 import {Card , CardActions, CardContent, CardMedia, Button ,Typography} from '@material-ui/core'
-
+import {MdDelete, MdDeleteOutline} from 'react-icons/md'
 import {useDispatch} from 'react-redux'
 import ReactPlayer from 'react-player';
 import { Player } from 'video-react';
 import { Link } from 'react-router-dom';
+import { deletePost } from '../../../redux/action/action';
 
 
 const Post=({post,url,formData,info})=> {
     const classes = useStyles();
-   
+    const dispatch = useDispatch()
     //console.log(post,'tdtdtdtdt');
     return (
          <div className="cards">
@@ -22,8 +23,8 @@ const Post=({post,url,formData,info})=> {
             formData?.type==='image'?(<CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
           ):formData?.type==='audio'?( <div>
                 <ReactAudioPlayer
-            src={`audios/${post.audio}.mp3`}
-            //   autoPlay
+            src={`/audios/${post.audio}.mp3`}
+            //   autoPlay {`/audio/${post.audio}.mp3`}
             controls
             />
             </div>):formData?.type==='video'?(<div>
@@ -65,8 +66,9 @@ const Post=({post,url,formData,info})=> {
                 {post.description}
            </div>
             
-            
-       </Card>
+           <button className='del' onClick={()=>dispatch(deletePost(post._id))}><MdDelete/></button>
+          
+           </Card>
        </div>
     )
 }

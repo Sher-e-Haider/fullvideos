@@ -1,5 +1,5 @@
 import Axios from "axios"
-
+//https://gaan-sahil.herokuapp.com
 const url = 'https://gaan-sahil.herokuapp.com/api'
 export const getPosts=()=>async(dispatch)=>{
    
@@ -21,6 +21,17 @@ export const createPost=(newPost)=>async(dispatch)=>{
         dispatch({type:"CREATE",payload:data})
     } catch (error) {
         
+       console.log(error.message);
+    }
+}
+
+export const deletePost=(id)=>async(dispatch)=>{
+  
+    try {
+        const {data} =await Axios.delete(`${url}/delete/${id}`)
+        dispatch({type:"DELETE",payload:id})
+    } catch (error) {
+       
        console.log(error.message);
     }
 }

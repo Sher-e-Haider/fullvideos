@@ -7,7 +7,7 @@ import "video-react/dist/video-react.css"
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-
+import {data} from './data'
 
 
 
@@ -20,7 +20,11 @@ function Form({url,setUrl,formData,setFormData,setInfo}){
     })
     const [audio,setAudio] = useState([])
     
+    const [selectedClient,setSelectedClient] = useState("lion"); //default value
     
+        function handleSelectChange(event) {
+            setSelectedClient(event.target.value);
+        }
    
     const [value, setValue] = React.useState(new Date());
     
@@ -120,8 +124,16 @@ function Form({url,setUrl,formData,setFormData,setInfo}){
   {
       formData.type==='audio'? (<div className="mb-3">
     <label for="audio" className="form-label">audio</label>
-    <input type="text" value={postData.audio} className="form-control" onChange={(e)=> setPostData({...postData, audio:e.target.value})} />
- </div>):formData.type==='image'?(
+    {/* <input type="text" value={selectedClient} placeholder='Audio' className="form-control" onChange={(e)=> setPostData({...postData, audio:e.target.value})} />
+     */}
+    <div>
+    <select value={postData.audio} onChange={(e)=> setPostData({...postData, audio:e.target.value})}>
+               {data.map(x=>(
+                <option value={x}>{x}</option>
+               ))}
+            </select>
+    </div>
+ </div> ):formData.type==='image'?(
     <FileBase type="file"  multiple={false}  onDone={({base64})=>setPostData({...postData,selectedFile:base64})}/>
  ):formData.type==='video'?(
     <div>
